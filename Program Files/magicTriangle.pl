@@ -10,16 +10,17 @@
 
 % Your program goes here
 
-magicTriangle(sum) :-
-    [A,B,C,D,E,F] ins 1..6, 
-    all_different(nums),
-    A+B+C #= sum,
-    C+D+E #= sum,
-    E+F+A #= sum,
-	label(sum).
+magicTriangle(Sum,[A,B,C,D,E,F]) :-
+    Vars=[A,B,C,D,E,F],
+    Vars ins 1..6, 
+    all_different(Vars),
+    A+B+C #= Sum,
+    C+D+E #= Sum,
+    E+F+A #= Sum,
+	label(Vars).
 
 % Your example queries go here
-% ?- magicTriangle(9).
-?- magicTriangle(10).
-% ?- magicTriangle(11),
-% ?- magicTriangle(12).
+% ?- magicTriangle(9,Circles).
+?- magicTriangle(10,Circles).
+% ?- magicTriangle(11,Circles),
+% ?- magicTriangle(12,Circles).
