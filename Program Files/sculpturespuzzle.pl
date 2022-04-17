@@ -9,14 +9,7 @@
 % Your program goes here
 sculptures(Animals):-
     Animals=[S,L,P],
+    all_different(Animals),
     Animals ins 1..3,
     S#\=1, L#\=S+1, L#\=S-1,
     label(Animals).
-    
-
-    
-/** <examples> Your example queries go here, e.g.
-?- member(X, [cat, mouse]).
-
-*/
-

@@ -8,20 +8,14 @@
 
 % Your program goes here
 colouring(Country) :-
-    Country= [A,B,C,D,E,F,G,H,I],
+    Country= [Germany,Poland,CzechRepublic,Slovakia,Austria,Hungary,Switzerland,Italy,Slovenia],
     Country ins 1..4,
-    A#\=B, A#\=C, A#\=D, A#\=E, A#\=F, A#\=G, A#\=H, A#\=I,
-    B#\=C, B#\=D, 
-    C#\=E, C#\=D,
-    D#\=E, D#\=H,
-    E#\=F, E#\=G, E#\=H, E#\=I,
-    F#\=G,
-    G#\=I,
-    H#\=I,
+    Germany#\=Poland, Germany#\=CzechRepublic, Germany#\=Austria, Germany#\=Switzerland,
+    Poland#\=CzechRepublic, Poland#\=Slovakia,
+    CzechRepublic#\=Austria, CzechRepublic#\=Slovakia,
+    Slovakia#\=Austria, Slovakia#\=Hungary,
+    Hungary#\=Austria, Hungary#\=Slovenia,
+    Austria#\=Slovenia, Austria#\=Italy, Austria#\=Switzerland,
+    Switzerland#\=Italy,
+    Slovenia#\=Italy,
     label(Country).
-
-    
-/** <examples> Your example queries go here, e.g.
-?- member(X, [cat, mouse]).
-
-*/
